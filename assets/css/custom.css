@@ -109,6 +109,83 @@ header .text-xl {
   background-color: rgb(var(--color-primary-700));
 }
 
+/* ── Homepage callouts ──────────────────────────────── */
+.ca-callouts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .ca-callouts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ca-callout {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgb(var(--color-neutral-200));
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  backdrop-filter: blur(4px);
+}
+
+.dark .ca-callout {
+  background-color: rgba(31, 41, 55, 0.85);
+  border-color: rgb(var(--color-neutral-700));
+}
+
+.ca-callout:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ca-callout-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.ca-callout h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: rgb(var(--color-neutral-900));
+}
+
+.dark .ca-callout h3 {
+  color: rgb(var(--color-neutral-100));
+}
+
+.ca-callout p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgb(var(--color-neutral-600));
+  margin: 0 0 1rem 0;
+  flex: 1;
+}
+
+.dark .ca-callout p {
+  color: rgb(var(--color-neutral-400));
+}
+
+.ca-callout-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(var(--color-primary-700));
+}
+
+.dark .ca-callout-link {
+  color: rgb(var(--color-primary-400));
+}
+
 /* ── Article list items ─────────────────────────────── */
 article h3 a:hover {
   text-decoration: underline;
