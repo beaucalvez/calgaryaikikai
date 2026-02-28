@@ -1,5 +1,5 @@
-colorScheme = "congo"
-defaultTheme = "light"
+colorScheme = "navy"
+defaultTheme = "system"
 enableSearch = true
 enableOpenGraph = true
 enableTwitterCards = true
@@ -7,29 +7,34 @@ enableJSONLD = true
 robotsNoIndex = false
 
 showBreadcrumbs = true
-showReadingTime = true
+showReadingTime = false
 showWordCount = false
 showDate = true
 showTableOfContents = false
 showPagination = true
 showRelatedContent = false
 showEdit = false
-showHeadingAnchors = true
-showCodeCopyButtons = true
+showHeadingAnchors = false
+showCodeCopyButtons = false
 
 [homepage]
   layout = "background"
-  homepageImage = "/images/dojo-hero.jpg"
+  homepageImage = "images/dojo-hero.jpg"
   showRecent = true
-  showRecentItems = 5
+  showRecentItems = 4
   showMoreLink = true
   showMoreLinkDest = "/blog/"
+  layoutBackgroundBlur = true
+
+[Author]
+  name = "Calgary Aikikai"
+  headline = "An aikido community in Calgary since 1980"
 
 [article]
   showDate = true
   showDateUpdated = false
-  showAuthor = true
-  showReadingTime = true
+  showAuthor = false
+  showReadingTime = false
   showTableOfContents = false
   showPagination = true
   showRelatedContent = false
@@ -42,6 +47,6 @@ showCodeCopyButtons = true
 
 [footer]
   showCopyright = true
-  showThemeAttribution = true
+  showThemeAttribution = false
   showAppearanceSwitcher = true
   showScrollToTop = true

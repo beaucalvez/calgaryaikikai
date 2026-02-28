@@ -24,7 +24,11 @@
       "Bash(pkill:*)",
       "Bash(hugo:*)",
       "Bash(gh auth:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo:*)",
+      "Bash(git:*)",
+      "Bash(curl:*)"
     ]
   }
 }
