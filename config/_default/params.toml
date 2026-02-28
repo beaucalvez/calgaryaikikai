@@ -1,0 +1,47 @@
+colorScheme = "congo"
+defaultTheme = "light"
+enableSearch = true
+enableOpenGraph = true
+enableTwitterCards = true
+enableJSONLD = true
+robotsNoIndex = false
+
+showBreadcrumbs = true
+showReadingTime = true
+showWordCount = false
+showDate = true
+showTableOfContents = false
+showPagination = true
+showRelatedContent = false
+showEdit = false
+showHeadingAnchors = true
+showCodeCopyButtons = true
+
+[homepage]
+  layout = "background"
+  homepageImage = "/images/dojo-hero.jpg"
+  showRecent = true
+  showRecentItems = 5
+  showMoreLink = true
+  showMoreLinkDest = "/blog/"
+
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = true
+  showReadingTime = true
+  showTableOfContents = false
+  showPagination = true
+  showRelatedContent = false
+  showEdit = false
+
+[list]
+  showBreadcrumbs = false
+  showSummary = true
+  groupByYear = false
+
+[footer]
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true

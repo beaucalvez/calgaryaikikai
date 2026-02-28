@@ -1,0 +1,37 @@
+[[main]]
+  name = "Aikido"
+  url = "/aikido/"
+  weight = 10
+
+[[main]]
+  name = "Schedule"
+  url = "/schedule/"
+  weight = 20
+
+[[main]]
+  name = "Pricing"
+  url = "/pricing/"
+  weight = 30
+
+[[main]]
+  name = "Seminars"
+  url = "/seminars/"
+  weight = 40
+
+[[main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 50
+
+[[main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 60
+
+[[main]]
+  name = "Registration"
+  url = "https://calgaryaikikai.us1.list-manage.com/subscribe?u=7fc806892a212f70339c37d51&id=fd658e80d9"
+  weight = 70
+  [main.params]
+    external = true
+    target = "_blank"

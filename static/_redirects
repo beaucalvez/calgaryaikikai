@@ -1,0 +1,19 @@
+# Preserve old WordPress URLs
+/pricing-2/                                    /pricing/                           301
+/begin/                                        /beginners/                         301
+/calgary-aikikai/                              /about/                             301
+/calgary-aikikai-kids-programme/               /kids/                              301
+/inaba-shihan/                                 /about/                             301
+/instructors/                                  /about/                             301
+/adult-testing-requirements/                   /pages/testing-requirements/        301
+/notes/                                        /pages/teachers-notes/              301
+/irl/                                          /beginners/                         301
+/vocabulary/                                   /pages/vocabulary/                  301
+/one-day-aikido-intensive-2/                   /blog/winter-one-day-aikido-intensive-march/  301
+/one-day-aikido-intensive/                     /seminars/2025-winter-intensive/    301
+/hayashiaikidoseminar2025/                     /seminars/2025-cyndy-hayashi-seminar/  301
+/congratulations-chris-and-andrew/             /blog/congratulations-chris-and-andrew/  301
+/regular-schedule-begins-on-saturday-sept-6/   /blog/regular-schedule-begins-on-saturday-sept-6/  301
+
+# Block CMS from search engines
+/admin/*                                       /admin/:splat                       200

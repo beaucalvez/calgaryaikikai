@@ -1,0 +1,116 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "list" }}
+
+  {{/* Header */}}
+  <header>
+    {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  </header>
+
+  {{/* Description */}}
+  {{ with .Content }}
+    <section class="mt-4 prose dark:prose-invert max-w-prose mb-10">
+      {{ . }}
+    </section>
+  {{ end }}
+
+  {{/* Split seminars into upcoming and past based on start_date */}}
+  {{ $now := now }}
+  {{ $upcoming := slice }}
+  {{ $past := slice }}
+
+  {{ range .Pages }}
+    {{ $startDate := .Params.start_date }}
+    {{ if $startDate }}
+      {{ if gt (time (printf "%v" $startDate)).Unix $now.Unix }}
+        {{ $upcoming = $upcoming | append . }}
+      {{ else }}
+        {{ $past = $past | append . }}
+      {{ end }}
+    {{ else }}
+      {{ $past = $past | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Sort upcoming ascending (soonest first) */}}
+  {{ $upcoming = sort $upcoming "Params.start_date" "asc" }}
+
+  {{/* Sort past descending (most recent first) */}}
+  {{ $past = sort $past "Params.start_date" "desc" }}
+
+  {{/* Upcoming Seminars */}}
+  <div class="mb-12">
+    <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-200">Upcoming Seminars</h2>
+    {{ if $upcoming }}
+      <div class="space-y-6">
+        {{ range $upcoming }}
+          <article class="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-2">
+              <a href="{{ .RelPermalink }}" class="hover:text-primary-600 dark:hover:text-primary-400">{{ .Title }}</a>
+            </h3>
+
+            <dl class="space-y-1 text-sm text-neutral-600 dark:text-neutral-400 mb-3">
+              {{ with .Params.instructor }}
+                <div><dt class="inline font-semibold">Instructor: </dt><dd class="inline">{{ . }}{{ with $.Params.rank }} ({{ . }}){{ end }}</dd></div>
+              {{ end }}
+              {{ with .Params.start_date }}
+                <div>
+                  <dt class="inline font-semibold">Date: </dt>
+                  <dd class="inline">{{ (time (printf "%v" .)).Format "January 2, 2006" }}</dd>
+                </div>
+              {{ end }}
+              {{ with .Params.times }}
+                <div><dt class="inline font-semibold">Time: </dt><dd class="inline">{{ . }}</dd></div>
+              {{ end }}
+              {{ with .Params.price }}
+                <div><dt class="inline font-semibold">Cost: </dt><dd class="inline">{{ . }}</dd></div>
+              {{ end }}
+            </dl>
+
+            {{ with .Params.summary }}
+              <p class="text-neutral-700 dark:text-neutral-300 mb-4">{{ . }}</p>
+            {{ end }}
+
+            <div class="flex gap-4">
+              <a href="{{ .RelPermalink }}" class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">View Details →</a>
+              {{ with .Params.square_link }}
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">Register →</a>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ else }}
+      <div class="prose dark:prose-invert">
+        <p>No upcoming seminars at this time. Check back soon, or <a href="https://calgaryaikikai.us1.list-manage.com/subscribe?u=7fc806892a212f70339c37d51&id=fd658e80d9">join our mailing list</a> for announcements.</p>
+      </div>
+    {{ end }}
+  </div>
+
+  {{/* Past Seminars */}}
+  {{ if $past }}
+    <div>
+      <h2 class="text-2xl font-bold mb-6 text-neutral-800 dark:text-neutral-200">Past Seminars</h2>
+      <div class="space-y-4">
+        {{ range $past }}
+          <article class="border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 opacity-75">
+            <h3 class="text-lg font-semibold mb-1">
+              <a href="{{ .RelPermalink }}" class="hover:text-primary-600 dark:hover:text-primary-400">{{ .Title }}</a>
+            </h3>
+            <div class="text-sm text-neutral-500 dark:text-neutral-500">
+              {{ with .Params.instructor }}
+                <span>{{ . }}{{ with $.Params.rank }}, {{ . }}{{ end }}</span>
+                <span class="mx-2">·</span>
+              {{ end }}
+              {{ with .Params.start_date }}
+                <span>{{ (time (printf "%v" .)).Format "January 2, 2006" }}</span>
+              {{ end }}
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,8 @@
+[goldmark]
+  [goldmark.renderer]
+    unsafe = true
+
+[highlight]
+  style = "github"
+  lineNos = false
+  noClasses = false

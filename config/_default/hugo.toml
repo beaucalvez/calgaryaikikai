@@ -1,0 +1,22 @@
+baseURL = "https://calgaryaikikai.com"
+languageCode = "en"
+title = "Calgary Aikikai"
+theme = "blowfish"
+
+[permalinks]
+  blog = "/blog/:slug/"
+  seminars = "/seminars/:slug/"
+  pages = "/pages/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"

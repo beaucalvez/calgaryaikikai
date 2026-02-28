@@ -1,0 +1,27 @@
+- day: Monday
+  classes:
+    - time: "7:00–8:30 PM"
+      name: Adults
+
+- day: Wednesday
+  classes:
+    - time: "6:30–7:30 PM"
+      name: Kids & Youth
+    - time: "7:30–9:00 PM"
+      name: Adults
+
+- day: Friday
+  classes:
+    - time: "6:30–7:30 PM"
+      name: Adults Weapons
+    - time: "7:30–8:30 PM"
+      name: Free Practice
+
+- day: Saturday
+  classes:
+    - time: "10:00–11:00 AM"
+      name: Kids (Ages 6–10)
+    - time: "10:15–11:15 AM"
+      name: Youth (Ages 11–13)
+    - time: "10:15–11:45 AM"
+      name: Adults

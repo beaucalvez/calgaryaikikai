@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:calgaryaikikai.com)",
+      "Bash(hugo*)",
+      "Bash(git init*)",
+      "Bash(git submodule*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git branch*)",
+      "Bash(git tag*)",
+      "Bash(npm install*)",
+      "Bash(npx blowfish-tools*)",
+      "Bash(mkdir -p*)",
+      "Bash(ls*)",
+      "Bash(python3:*)",
+      "Bash(hugo new:*)",
+      "Bash(git init:*)",
+      "Bash(hugo mod:*)",
+      "Bash(git submodule:*)",
+      "Bash(pkill:*)",
+      "Bash(hugo:*)",
+      "Bash(gh auth:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
