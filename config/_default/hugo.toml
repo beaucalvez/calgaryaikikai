@@ -1,7 +1,9 @@
 baseURL = "https://calgaryaikikai.com"
 languageCode = "en"
 title = "Calgary Aikikai"
-theme = "blowfish"
+[module]
+  [[module.imports]]
+    path = "github.com/nunocoracao/blowfish/v2"
 
 [permalinks]
   blog = "/blog/:slug/"

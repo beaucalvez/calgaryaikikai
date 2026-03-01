@@ -28,7 +28,14 @@
       "Bash(git commit:*)",
       "Bash(gh repo:*)",
       "Bash(git:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(go version:*)",
+      "Bash(brew install:*)",
+      "Bash(GOFLAGS=-mod=mod hugo mod:*)",
+      "Bash(GONOSUMDB=\"*\" GOFLAGS=\"\" go get:*)",
+      "Bash(GONOSUMDB=\"*\" go list:*)",
+      "Bash(GONOSUMDB=\"*\" go get:*)",
+      "Bash(GOPROXY=\"direct\" GONOSUMDB=\"*\" go get:*)"
     ]
   }
 }
