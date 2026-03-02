@@ -1,71 +1,49 @@
 <footer id="site-footer" class="print:hidden">
 
   {{/* ── Multi-column footer content ── */}}
-  <div class="py-12 border-t border-neutral-200 dark:border-neutral-700">
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+  <div class="ca-footer-top">
+    <div class="ca-footer-grid">
 
       {{/* ── About ── */}}
-      <div class="col-span-2 md:col-span-1">
-        <p class="mb-3 text-base font-semibold text-neutral-800 dark:text-neutral-200">
-          Calgary Aikikai
-        </p>
-        <p class="mb-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+      <div>
+        <p class="ca-footer-name">Calgary Aikikai</p>
+        <p class="ca-footer-about-text">
           An aikido community in Calgary since 1980. Training traditional aikido
           in a welcoming, inclusive dojo.
         </p>
-        <p class="mb-1 text-sm text-neutral-500 dark:text-neutral-400">
-          Calgary, AB
-        </p>
-        <p class="mb-5 text-sm text-neutral-500 dark:text-neutral-400">
-          <a href="tel:+14039690644"
-             class="hover:text-primary-500 hover:underline">
-            +1 (403) 969-0644
-          </a>
+        <p class="ca-footer-contact">Calgary, AB</p>
+        <p class="ca-footer-contact">
+          <a href="tel:+14039690644">+1 (403) 969-0644</a>
         </p>
 
-        {{/* ── Social icons ── */}}
-        <div class="flex gap-4">
-          <a href="#"
-             aria-label="Instagram"
-             title="Instagram (coming soon)"
-             class="text-neutral-400 hover:text-primary-500 transition-colors"
+        {{/* Social icons — replace # with real profile URLs */}}
+        <div class="ca-footer-social">
+          <a href="#" aria-label="Instagram" title="Instagram (coming soon)"
              target="_blank" rel="noopener noreferrer">
-            <span class="h-5 w-5 block">{{ partial "icon.html" "instagram" }}</span>
+            {{ partial "icon.html" "instagram" }}
           </a>
-          <a href="#"
-             aria-label="Facebook"
-             title="Facebook (coming soon)"
-             class="text-neutral-400 hover:text-primary-500 transition-colors"
+          <a href="#" aria-label="Facebook" title="Facebook (coming soon)"
              target="_blank" rel="noopener noreferrer">
-            <span class="h-5 w-5 block">{{ partial "icon.html" "facebook" }}</span>
+            {{ partial "icon.html" "facebook" }}
           </a>
-          <a href="#"
-             aria-label="X / Twitter"
-             title="X / Twitter (coming soon)"
-             class="text-neutral-400 hover:text-primary-500 transition-colors"
+          <a href="#" aria-label="X / Twitter" title="X / Twitter (coming soon)"
              target="_blank" rel="noopener noreferrer">
-            <span class="h-5 w-5 block">{{ partial "icon.html" "twitter" }}</span>
+            {{ partial "icon.html" "twitter" }}
           </a>
-          <a href="#"
-             aria-label="YouTube"
-             title="YouTube (coming soon)"
-             class="text-neutral-400 hover:text-primary-500 transition-colors"
+          <a href="#" aria-label="YouTube" title="YouTube (coming soon)"
              target="_blank" rel="noopener noreferrer">
-            <span class="h-5 w-5 block">{{ partial "icon.html" "youtube" }}</span>
+            {{ partial "icon.html" "youtube" }}
           </a>
         </div>
       </div>
 
       {{/* ── Navigate ── */}}
       <div>
-        <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-          Navigate
-        </p>
-        <ul class="space-y-2">
+        <p class="ca-footer-col-heading">Navigate</p>
+        <ul class="ca-footer-links">
           {{ range .Site.Menus.main }}
           <li>
             <a href="{{ .URL }}"
-               class="text-sm text-neutral-500 dark:text-neutral-400 hover:text-primary-500 hover:underline"
                {{ if .Params.external }}target="_blank" rel="noopener noreferrer"{{ end }}>
               {{ .Name }}
             </a>
@@ -76,55 +54,90 @@
 
       {{/* ── Dojo Info ── */}}
       <div>
-        <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-          Dojo Info
-        </p>
-        <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
-          <li><a href="/beginners/"                  class="hover:text-primary-500 hover:underline">Beginners</a></li>
-          <li><a href="/kids/"                        class="hover:text-primary-500 hover:underline">Kids Programme</a></li>
-          <li><a href="/pages/vocabulary/"            class="hover:text-primary-500 hover:underline">Vocabulary</a></li>
-          <li><a href="/pages/testing-requirements/"  class="hover:text-primary-500 hover:underline">Testing Requirements</a></li>
-          <li><a href="/pages/rei-and-bowing/"        class="hover:text-primary-500 hover:underline">礼 Rei &amp; Bowing</a></li>
-          <li><a href="/pages/teachers-notes/"        class="hover:text-primary-500 hover:underline">Teacher's Notes</a></li>
-          <li><a href="/pages/dojo-calendar/"         class="hover:text-primary-500 hover:underline">Dojo Calendar</a></li>
+        <p class="ca-footer-col-heading">Dojo Info</p>
+        <ul class="ca-footer-links">
+          <li><a href="/beginners/">Beginners</a></li>
+          <li><a href="/kids/">Kids Programme</a></li>
+          <li><a href="/pages/vocabulary/">Vocabulary</a></li>
+          <li><a href="/pages/testing-requirements/">Testing Requirements</a></li>
+          <li><a href="/pages/rei-and-bowing/">礼 Rei &amp; Bowing</a></li>
+          <li><a href="/pages/teachers-notes/">Teacher's Notes</a></li>
+          <li><a href="/pages/dojo-calendar/">Dojo Calendar</a></li>
         </ul>
       </div>
 
       {{/* ── Community ── */}}
       <div>
-        <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
-          Community
-        </p>
-        <ul class="space-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <p class="ca-footer-col-heading">Community</p>
+        <ul class="ca-footer-links">
           <li>
             <a href="https://calgaryaikikai.us1.list-manage.com/subscribe?u=7fc806892a212f70339c37d51&amp;id=fd658e80d9"
-               class="hover:text-primary-500 hover:underline"
                target="_blank" rel="noopener noreferrer">
               Class Registration
             </a>
           </li>
           <li>
             <a href="https://store.calgaryaikikai.com"
-               class="hover:text-primary-500 hover:underline"
                target="_blank" rel="noopener noreferrer">
               Online Store
             </a>
           </li>
           <li>
-            <a href="#"
-               class="hover:text-primary-500 hover:underline"
-               target="_blank" rel="noopener noreferrer"
-               title="Slack invite link — add URL">
+            {{/* Replace # with your Slack invite URL */}}
+            <a href="#" target="_blank" rel="noopener noreferrer">
               Slack Community
             </a>
           </li>
           <li>
-            <a href="#"
-               class="hover:text-primary-500 hover:underline"
-               target="_blank" rel="noopener noreferrer"
-               title="Google Forms link — add URL">
+            {{/* Replace # with your Google Forms testing application URL */}}
+            <a href="#" target="_blank" rel="noopener noreferrer">
               Testing Application
             </a>
+          </li>
+        </ul>
+      </div>
+
+      {{/* ── Links ── */}}
+      <div>
+        <p class="ca-footer-col-heading">Links</p>
+
+        <p class="ca-footer-subheading">Sister Dojos</p>
+        <ul class="ca-footer-links">
+          <li>
+            <a href="https://www.bigrock-aikikai.com/"
+               target="_blank" rel="noopener noreferrer">Big Rock Aikikai</a>
+          </li>
+          <li>
+            <a href="https://masakokoro.com/"
+               target="_blank" rel="noopener noreferrer">Masa Kokoro Aikido</a>
+          </li>
+          <li>
+            <a href="http://www.tanrenjuku.com/"
+               target="_blank" rel="noopener noreferrer">Tanren Juku</a>
+          </li>
+        </ul>
+
+        <p class="ca-footer-subheading">Organizations</p>
+        <ul class="ca-footer-links">
+          <li>
+            <a href="https://canadianaikidofederation.ca/"
+               target="_blank" rel="noopener noreferrer">Canadian Aikido Federation</a>
+          </li>
+          <li>
+            <a href="https://www.alberta-aikido.org/"
+               target="_blank" rel="noopener noreferrer">Alberta Aikido Association</a>
+          </li>
+          <li>
+            <a href="http://www.kobayashi-dojo.com/english/"
+               target="_blank" rel="noopener noreferrer">Kobayashi Dojo</a>
+          </li>
+          <li>
+            <a href="https://igarashidojo.jp/english/english.html"
+               target="_blank" rel="noopener noreferrer">Igarashi Dojo</a>
+          </li>
+          <li>
+            <a href="https://aikikai.or.jp/eng/"
+               target="_blank" rel="noopener noreferrer">Aikikai Foundation</a>
           </li>
         </ul>
       </div>
@@ -133,9 +146,8 @@
   </div>
 
   {{/* ── Bottom bar ── */}}
-  <div class="py-4 flex flex-wrap items-center justify-between gap-4 border-t border-neutral-200 dark:border-neutral-700 text-sm text-neutral-500 dark:text-neutral-400">
+  <div class="ca-footer-bottom">
 
-    {{/* Copyright */}}
     {{ if .Site.Params.footer.showCopyright | default true }}
     <p>
       {{- with replace .Site.Params.copyright "{ year }" now.Year }}
@@ -146,11 +158,10 @@
     </p>
     {{ end }}
 
-    {{/* Theme attribution */}}
     {{ if .Site.Params.footer.showThemeAttribution | default true }}
-    <p class="text-xs">
-      {{ $hugo     := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>` }}
-      {{ $blowfish := printf `<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>` }}
+    <p>
+      {{ $hugo     := printf `<a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:inherit;">Hugo</a>` }}
+      {{ $blowfish := printf `<a href="https://blowfish.page/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:inherit;">Blowfish</a>` }}
       {{ i18n "footer.powered_by" (dict "Hugo" $hugo "Theme" $blowfish) | safeHTML }}
     </p>
     {{ end }}
