@@ -1,5 +1,8 @@
 # Calgary Aikikai Hugo Site
 
+## Session Start
+Read `PLAN.md` at the start of every session to understand the current state of the project and what to work on next. When a task is completed, update `PLAN.md` by marking the checkbox(es) done before moving on.
+
 ## Project
 Convert calgaryaikikai.com from WordPress (Tersus theme) to Hugo static site using Blowfish theme. Site is for an aikido dojo established 1980 in Calgary, AB. Primary purpose: marketing, class info, event/seminar listings, blog posts. Single technical maintainer.
 
