@@ -1,6 +1,11 @@
 /* Calgary Aikikai — custom styles */
 
 /* ── Typography ─────────────────────────────────────── */
+:root {
+  font-family: "Public Sans", "Helvetica Neue", Arial, sans-serif, -apple-system;
+  --header-logo-size: 45px;
+}
+
 .prose {
   --tw-prose-links: rgb(var(--color-primary-700));
 }
@@ -16,6 +21,14 @@
 }
 
 /* ── Navigation ─────────────────────────────────────── */
+:root { --header-logo-size: 45px; }
+
+img.logo {
+  width: var(--header-logo-size);
+  height: var(--header-logo-size);
+  max-width: var(--header-logo-size);
+  max-height: var(--header-logo-size);
+}
 /* Slightly larger site title */
 header .text-xl {
   font-size: 1.2rem;
@@ -63,6 +76,97 @@ header .text-xl {
 
 .dark .prose table tr:nth-child(even) td {
   background-color: rgb(var(--color-neutral-800));
+}
+
+/* ── Schedule cards ─────────────────────────────────── */
+.schedule-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 1024px) {
+  .schedule-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .schedule-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.schedule-card {
+  border: 1px solid rgb(var(--color-neutral-200));
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.dark .schedule-card {
+  border-color: rgb(var(--color-neutral-700));
+}
+
+.schedule-card-day {
+  background-color: rgb(var(--color-primary-800));
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+}
+
+.dark .schedule-card-day {
+  background-color: rgb(var(--color-primary-900));
+}
+
+.schedule-card-classes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.schedule-card-class {
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 1rem 0.65rem 1.25rem;
+  border-bottom: 1px solid rgb(var(--color-neutral-100));
+  border-left: 4px solid transparent;
+}
+
+.schedule-card-class:last-child {
+  border-bottom: none;
+}
+
+.dark .schedule-card-class {
+  border-bottom-color: rgb(var(--color-neutral-700));
+}
+
+.schedule-card-class.level-adults  { border-left-color: rgb(var(--color-primary-500)); }
+.schedule-card-class.level-kids    { border-left-color: #16a34a; }
+.schedule-card-class.level-youth   { border-left-color: #2563eb; }
+.schedule-card-class.level-weapons { border-left-color: #d97706; }
+
+.schedule-card-time {
+  font-size: 0.8rem;
+  color: rgb(var(--color-neutral-500));
+  margin-bottom: 0.1rem;
+}
+
+.dark .schedule-card-time {
+  color: rgb(var(--color-neutral-400));
+}
+
+.schedule-card-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgb(var(--color-neutral-800));
+}
+
+.dark .schedule-card-name {
+  color: rgb(var(--color-neutral-100));
 }
 
 /* ── Seminar cards ──────────────────────────────────── */

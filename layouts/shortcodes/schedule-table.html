@@ -1,0 +1,15 @@
+<div class="schedule-cards">
+  {{ range site.Data.schedule }}
+  <div class="schedule-card">
+    <div class="schedule-card-day">{{ .day }}</div>
+    <ul class="schedule-card-classes">
+      {{ range .classes }}
+      <li class="schedule-card-class level-{{ .level }}">
+        <span class="schedule-card-time">{{ .time }}</span>
+        <span class="schedule-card-name">{{ .name }}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</div>

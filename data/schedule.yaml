@@ -2,26 +2,34 @@
   classes:
     - time: "7:00–8:30 PM"
       name: Adults
+      level: adults
 
 - day: Wednesday
   classes:
     - time: "6:30–7:30 PM"
       name: Kids & Youth
+      level: kids
     - time: "7:30–9:00 PM"
       name: Adults
+      level: adults
 
 - day: Friday
   classes:
     - time: "6:30–7:30 PM"
       name: Adults Weapons
+      level: weapons
     - time: "7:30–8:30 PM"
       name: Free Practice
+      level: adults
 
 - day: Saturday
   classes:
     - time: "10:00–11:00 AM"
       name: Kids (Ages 6–10)
+      level: kids
     - time: "10:15–11:15 AM"
       name: Youth (Ages 11–13)
+      level: youth
     - time: "10:15–11:45 AM"
       name: Adults
+      level: adults
