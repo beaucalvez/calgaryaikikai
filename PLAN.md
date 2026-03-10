@@ -7,11 +7,11 @@ Work through phases in order. Check off items as they're completed.
 
 ## Phase 1 — Global Config (high visual impact, do first)
 
-- [ ] Enable `showCards = true` in `params.toml` list section so blog/seminar listings render as image cards
-- [ ] Set default `heroStyle` in `params.toml` (suggest `"big"` as the global default)
-- [ ] Enable `showHero = true` in `params.toml` article section
-- [ ] Enable YouTube privacy mode in `hugo.toml`: `[privacy.youtube] privacyEnhanced = true`
-- [ ] Verify Fuse.js search index is working (Blowfish search enabled in config)
+- [x] Enable `showCards = true` in `params.toml` list section so blog/seminar listings render as image cards
+- [x] Set default `heroStyle` in `params.toml` (suggest `"big"` as the global default)
+- [x] Enable `showHero = true` in `params.toml` article section
+- [x] Enable YouTube privacy mode in `hugo.toml`: `[privacy.youtube] privacyEnhanced = true`
+- [x] Verify Fuse.js search index is working (Blowfish search enabled in config)
 
 ---
 
@@ -19,11 +19,12 @@ Work through phases in order. Check off items as they're completed.
 
 Goal: eliminate raw HTML editing — all schedule changes via YAML only.
 
-- [ ] Audit `data/schedule.yaml` — ensure structure matches `day / classes[]` with `time`, `name`, `level` fields
-- [ ] Create `layouts/partials/schedule-table.html` that loops over `site.Data.schedule`
-- [ ] Replace `{{< rawhtml >}}` block in `content/schedule/_index.md` with partial call
-- [ ] Add colour-coding by class level (Kids vs Adults vs Weapons) via CSS class on `level` field
-- [ ] Test: edit one entry in YAML, verify it updates the rendered page
+- [x] Audit `data/schedule.yaml` — ensure structure matches `day / classes[]` with `time`, `name`, `level` fields
+- [x] Create `layouts/shortcodes/schedule-table.html` that loops over `site.Data.schedule` (card-based layout, one card per day)
+- [x] Replace `{{< rawhtml >}}` block in `content/schedule/_index.md` with shortcode call
+- [x] Add colour-coding by class level (Kids vs Adults vs Weapons) via CSS class on `level` field
+- [x] Test: edit one entry in YAML, verify it updates the rendered page
+- [x] Override `layouts/schedule/list.html` to remove `max-w-prose` constraint for full-width card grid
 
 ---
 
@@ -107,6 +108,7 @@ Goal: philosophy/marketing page with strong visual entry point and CTAs.
 - [ ] Create `layouts/404.html` — branded error page with nav links
 - [ ] Create `static/_redirects` to preserve old WordPress URL paths
 - [ ] Audit taxonomy pages (tags/categories) — ensure `showCards = true` applies
+- [ ] *(optional)* Swap `list` widget for `select` widget in `static/admin/config.yml` to enforce a controlled vocabulary for tags/categories (e.g. "News", "Seminars", "Kids") instead of free-form text entry
 - [ ] Add Slack community link and Google Forms testing application link to Contact or nav
 - [ ] Review all `pages/` section pages — confirm archetype front matter is applied consistently
 - [ ] Run Lighthouse / PageSpeed audit and address any major issues

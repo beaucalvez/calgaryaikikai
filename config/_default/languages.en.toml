@@ -6,6 +6,6 @@ weight = 1
   isoCode = "en"
   rtl = false
   dateFormat = "January 2, 2006"
-  logo = ""
+  logo = "images/ca.logo-large.png"
   description = "Calgary Aikikai — An aikido community in Calgary, AB, established 1980. Adult and kids programs, beginner courses, seminars, and more."
   author = { name = "Calgary Aikikai", email = "" }

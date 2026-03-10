@@ -17,6 +17,9 @@ showEdit = false
 showHeadingAnchors = false
 showCodeCopyButtons = false
 
+[header]
+  layout = "fixed-fill"
+
 [homepage]
   layout = "background"
   homepageImage = "images/dojo-hero.jpg"
@@ -39,11 +42,14 @@ showCodeCopyButtons = false
   showPagination = true
   showRelatedContent = false
   showEdit = false
+  showHero = true
+  heroStyle = "big"
 
 [list]
   showBreadcrumbs = false
   showSummary = true
   groupByYear = false
+  showCards = true
 
 [footer]
   showCopyright = true

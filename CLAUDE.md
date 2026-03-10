@@ -118,3 +118,9 @@ Theme installed as git submodule or Hugo module. CLI available: `npx blowfish-to
 
 ## Design Direction
 Clean, minimal, content-focused. Match the calm/traditional aesthetic appropriate for an aikido dojo. Light default with dark mode option. Use Blowfish's built-in color schemes or create custom one.
+
+## Front-End Markup Standards
+- HTML must be clean and concise — no unnecessary wrappers or redundant attributes
+- No inline styles — all styling goes in `assets/css/custom.css`
+- No `!important` — resolve specificity issues properly instead
+- Use semantic HTML elements appropriate to the content type

@@ -22,3 +22,7 @@ title = "Calgary Aikikai"
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
+
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
